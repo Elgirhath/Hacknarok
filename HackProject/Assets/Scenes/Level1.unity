@@ -10716,6 +10716,9 @@ MonoBehaviour:
   - name: Forge the docs!
     type: 2
     instantiateTime: 30
+  - name: Steal a child!
+    type: 1
+    instantiateTime: 45
 --- !u!4 &881526441
 Transform:
   m_ObjectHideFlags: 0

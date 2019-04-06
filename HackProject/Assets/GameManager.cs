@@ -12,8 +12,8 @@ public class GameManager : MonoBehaviour
     } 
     public static GameManager instance;
 
-    public TaskStruct[] tasks;
-    
+    public List<TaskStruct> tasks;
+    private TaskManager taskManager;
     
     
     
@@ -29,13 +29,20 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        taskManager = TaskManager.instance;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        for (var i = tasks.Count-1; i >= 0; --i)
+        {
+            if (Time.time >= tasks[i].instantiateTime)
+            {
+                taskManager.AddTask(tasks[i]);
+                tasks.RemoveAt(i);
+            }
+        }
     }
 }
 
