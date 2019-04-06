@@ -4366,7 +4366,7 @@ RectTransform:
   - {fileID: 8060487564341893669}
   - {fileID: 286877785}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -18465,7 +18465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e35e5fa1bde10984c9560ff61753fa91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vaxItem: {fileID: 11400000, guid: 39ca73a405ec9bf41b2c59c74eca6b7a, type: 2}
+  vaxItem: {fileID: 11400000, guid: b3c7f922a4c55184eb46946c00be1c3f, type: 2}
 --- !u!1001 &1764864610
 PrefabInstance:
   m_ObjectHideFlags: 0
