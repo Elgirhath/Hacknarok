@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {    
@@ -14,7 +15,6 @@ public class GameManager : MonoBehaviour
 
     public List<TaskStruct> tasks;
     private TaskManager taskManager;
-    
     
     
     private void Awake() {
@@ -42,6 +42,18 @@ public class GameManager : MonoBehaviour
                 taskManager.AddTask(tasks[i]);
                 tasks.RemoveAt(i);
             }
+        }
+    }
+
+    public void QuitGame(bool haveFailed)
+    {
+        if (haveFailed)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
+        else
+        {
+            SceneManager.LoadScene("Success");
         }
     }
 }

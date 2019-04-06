@@ -16,12 +16,15 @@ public class TaskManager : MonoBehaviour
 
     private Text timeLeftText;
 
+    private GameManager gameManager;
+
     private List<Task> taskList = new List<Task>();
     // Start is called before the first frame update
     void Start()
     {
         timeLeft = overallTimeLimit;
         timeLeftText = GetComponentInChildren<Text>();
+        gameManager = GameManager.instance;
     }
 
     private void Awake() {
@@ -59,8 +62,10 @@ public class TaskManager : MonoBehaviour
             timeLeftText.text = "0" + minutesLeft + ":0" + secondsLeft;
         else
             timeLeftText.text = "0" + minutesLeft + ":" + secondsLeft;
-        
-        if(timeLeft <= 0 )
-            Application.Quit();
+
+        if (timeLeft <= 0)
+        {
+            gameManager.QuitGame(true);
+        }
     }
 }

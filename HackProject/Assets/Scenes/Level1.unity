@@ -10630,6 +10630,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f094a0fa49c64524c8b2395731f28569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverScene:
+    m_Handle: 1
   tasks:
   - name: Forge the docs!
     type: 2
@@ -16436,7 +16438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26ce33173d7417f4a934495e52485a7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  overallTimeLimit: 181
+  overallTimeLimit: 5
   taskPrefab: {fileID: 1746117619210038988, guid: 6a6f507a801316647888b93db600f709,
     type: 3}
 --- !u!114 &1514145157
