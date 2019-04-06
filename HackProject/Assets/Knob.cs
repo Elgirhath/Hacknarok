@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Knob : MonoBehaviour, Interactable
 {
-    public void Interact() {
+    public void Interact(InteractController controller) {
         Debug.Log("Interacted");
     }
 }

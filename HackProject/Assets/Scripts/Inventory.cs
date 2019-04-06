@@ -4,32 +4,22 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    private List<Item> itemList;
+    private List<Item> itemList = new List<Item>();
 
-    private void Add(Item item)
+    public void Add(Item item)
     {
         itemList.Add(item);
     }
 
-    private void Remove(Item item)
+    public void Remove(Item item)
     {
         foreach (Item i in itemList)
         {
             if (i.GetType() == item.GetType())
             {
                 itemList.Remove(i);
+                return;
             }
         }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
