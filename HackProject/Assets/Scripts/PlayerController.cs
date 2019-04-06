@@ -69,10 +69,12 @@ public class PlayerController : MonoBehaviour
     private void FlipX()
     {
         facingRight = !facingRight;
+        sprite.flipX = !sprite.flipX;
     }
 
     private void FlipY()
     {
         facingUp = !facingUp;
+        sprite.flipY = !sprite.flipY;
     }
 }
