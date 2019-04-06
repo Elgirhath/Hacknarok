@@ -5,13 +5,8 @@ using UnityEngine;
 
 public class Door : MonoBehaviour, Interactable {
     private Transform player;
-    public enum Axis {
-        X,
-        Y
-    };
 
     public float minCloseDist;
-    public Axis normalAxis;
 
     private bool _isClosed = true;
     private bool isClosed {
@@ -35,21 +30,7 @@ public class Door : MonoBehaviour, Interactable {
         if (!isClosed) {
             float distance = Vector2.Distance(player.position, transform.position);
             if (distance > minCloseDist) {
-                Debug.Log(distance);
                 isClosed = true;
-            }
-        }
-    }
-
-    private Vector2 normal {
-        get {
-            switch (normalAxis) {
-                case Axis.X:
-                    return Vector2.right;
-                case Axis.Y:
-                    return Vector2.up;
-                default:
-                    throw new Exception("Wrong axis");
             }
         }
     }
