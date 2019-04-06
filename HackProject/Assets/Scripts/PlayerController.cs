@@ -5,12 +5,13 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed;
+    public string xInput;
+    public string yInput;
 
     private RectTransform tr;
     private SpriteRenderer sprite;
 
     private bool facingUp;
-
     private bool facingRight;
     // Start is called before the first frame update
     void Start()
@@ -24,11 +25,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Horizontal"))
+        if (Input.GetButton(xInput))
         {
             MoveX();
         }
-        if(Input.GetButton("Vertical"))
+        if(Input.GetButton(yInput))
         {
             MoveY();
         }
@@ -36,7 +37,7 @@ public class PlayerController : MonoBehaviour
 
     private void MoveX()
     {
-        float direction = Input.GetAxisRaw("Horizontal");
+        float direction = Input.GetAxisRaw(xInput);
         tr.position += Vector3.right * moveSpeed * direction * Time.deltaTime;
         if (direction < 0)
         {
@@ -52,8 +53,8 @@ public class PlayerController : MonoBehaviour
 
     private void MoveY()
     {
-        float direction = Input.GetAxisRaw("Vertical");
-        tr.position += Vector3.up * moveSpeed * Input.GetAxisRaw("Vertical") * Time.deltaTime;
+        float direction = Input.GetAxisRaw(yInput);
+        tr.position += Vector3.up * moveSpeed * direction * Time.deltaTime;
         if (direction < 0)
         {
             if(facingUp)
