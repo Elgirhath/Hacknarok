@@ -1,26 +1,54 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TaskManager : MonoBehaviour
 {
     public float overallTimeLimit;
+    private float timeLeft;
     public GameObject taskPrefab;
-    private List<Task> tasksList;
+
+    public static TaskManager instance;
+
+    private int minutesLeft;
+    private int secondsLeft;
+
+    private Text timeLeftText;
+
+    private List<Task> taskList = new List<Task>();
     // Start is called before the first frame update
     void Start()
     {
+        timeLeft = overallTimeLimit;
+        timeLeftText = GetComponentInChildren<Text>();
+    }
+
+    private void Awake() {
+        if (!instance)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-    }
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            taskList.Add(Task.CreateTask(taskPrefab, "hehe"));
+        }
 
-    private void AddTask()
-    {
-        //tasksList.Add(Instantiate());
-//        tasksList.Add(Instantiate(taskPrefab, transform));
+        timeLeft -= Time.deltaTime;
+        secondsLeft = (int) timeLeft % 60;
+        minutesLeft = (int) timeLeft / 60;
+        if(secondsLeft < 10)
+            timeLeftText.text = "0" + minutesLeft + ":0" + secondsLeft;
+        else
+            timeLeftText.text = "0" + minutesLeft + ":" + secondsLeft;
+        
+        if(timeLeft <= 0 )
+            Application.Quit();
     }
 }

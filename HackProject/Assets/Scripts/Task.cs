@@ -5,29 +5,38 @@ using UnityEngine.UI;
 
 public class Task : MonoBehaviour
 {
-    private float timeLimit;
+    private float timeLimit = 30.0f;
     private Image timeIndicator;
-
-    private float initTime;
-
-    private void SetNew(string name, float timeLimit)
+    private float timeLeft;
+    public static Task CreateTask(GameObject taskPrefab, string taskName)
     {
-        this.timeLimit = timeLimit;
-        initTime = Time.time;
+        GameObject newTask = Instantiate(taskPrefab, TaskManager.instance.transform);
+        newTask.GetComponentInChildren<Text>().text = taskName;
+        return newTask.GetComponent<Task>();
     }
+    
     // Start is called before the first frame update
     void Start()
     {
         timeIndicator = GetComponentInChildren<Image>();
-        
+        timeLeft = timeLimit;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float timePassed = Time.time - initTime;
-        timeIndicator.fillAmount = timePassed / initTime;
+        timeLeft -= Time.deltaTime;
+        timeIndicator.fillAmount = timeLeft/timeLimit;
+        if (timeLeft <= 0)
+        {
+            Perish(false);
+        }
     }
-    
-    
+
+    private void Perish(bool haveSucceeded)
+    {
+        if(haveSucceeded)
+            
+        Destroy(gameObject);
+    }
 }
