@@ -6,21 +6,24 @@ public class TaskManager : MonoBehaviour
 {
     public float overallTimeLimit;
     public GameObject taskPrefab;
-    private List<Task> tasksList;
+
+    public static TaskManager instance;
     // Start is called before the first frame update
     void Start()
     {
     }
 
+    private void Awake() {
+        if (!instance)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
+        
+    }
     // Update is called once per frame
     void Update()
     {
-        
-    }
-
-    private void AddTask()
-    {
-        //tasksList.Add(Instantiate());
-        tasksList.Add(Instantiate(taskPrefab, transform));
+        if (Input.GetKeyDown(KeyCode.E))
+            Task.CreateTask(taskPrefab);
     }
 }
