@@ -6759,9 +6759,10 @@ GameObject:
   - component: {fileID: 564043211}
   - component: {fileID: 564043213}
   - component: {fileID: 564043212}
+  - component: {fileID: 564043214}
   m_Layer: 0
   m_Name: DutyDoctor
-  m_TagString: Untagged
+  m_TagString: Interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6905,6 +6906,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &564043214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564043207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e35e5fa1bde10984c9560ff61753fa91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item: {fileID: 11400000, guid: ed35a7b7a3245b6429a192254ff1595f, type: 2}
 --- !u!4 &565748837 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5556365298069656976, guid: b07efcbcc27aea04b86ba30014a67a50,
@@ -10834,8 +10848,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0400c38304bebd245907f641fbf926cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isLocked: 0
+  isLocked: 1
   minCloseDist: 5
+  key: {fileID: 11400000, guid: ed35a7b7a3245b6429a192254ff1595f, type: 2}
 --- !u!1001 &893157255
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19497,7 +19512,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e35e5fa1bde10984c9560ff61753fa91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vaxItem: {fileID: 11400000, guid: b3c7f922a4c55184eb46946c00be1c3f, type: 2}
+  item: {fileID: 11400000, guid: b3c7f922a4c55184eb46946c00be1c3f, type: 2}
 --- !u!1001 &1764864610
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23236,6 +23251,7 @@ GameObject:
   - component: {fileID: 5503114061392682453}
   - component: {fileID: 5503114061392682454}
   - component: {fileID: 5503114061392682455}
+  - component: {fileID: 5503114061392682456}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Player
@@ -23388,6 +23404,18 @@ MonoBehaviour:
   maxDistance: 5
   tooltipPrefab: {fileID: 2229001707827188723, guid: 3efcc56c2d804b94abd33156f0029a5b,
     type: 3}
+--- !u!114 &5503114061392682456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5503114061392682449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53145efe2049ead4b8ff70195acc5edf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5556365298069656976 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5556365298069656976, guid: b07efcbcc27aea04b86ba30014a67a50,
