@@ -32,14 +32,14 @@ public class TaskManager : MonoBehaviour
         
     }
 
+    public void AddTask(TaskStruct tStruct)
+    {
+        taskList.Add(Task.CreateTask(taskPrefab, tStruct.name, tStruct.type));
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            //taskList.Add(Task.CreateTask(taskPrefab, "hehe", ));
-        }
-
         timeLeft -= Time.deltaTime;
         secondsLeft = (int) timeLeft % 60;
         minutesLeft = (int) timeLeft / 60;
