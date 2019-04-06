@@ -5,19 +5,22 @@ using UnityEngine;
 public class Docs : MonoBehaviour, Interactable
 {
     private bool done;
+    private bool forgeInProgress;
     private TaskManager taskManager;
     public float moveTolerance;
-    private Transform initialPosition;
+    private RectTransform playerPosition;
+    private Vector3 initialPosition;
+    private Coroutine coroutine;
+    
+    public float timeToSucceed;
     public void Interact(InteractController controller) {
-        
         Task task = taskManager.TaskExists(GameManager.TaskType.DOCUMENTS);
         if (task)
         {
-            initialPosition = controller.gameObject.transform;
-            
-            
-            Debug.Log("Nice!");
-            task.Perish(true);
+            playerPosition = controller.gameObject.GetComponent<RectTransform>();
+            initialPosition = playerPosition.position;
+            if(!forgeInProgress)
+                coroutine = StartCoroutine(Forge(task));
         }
         
         else
@@ -29,9 +32,34 @@ public class Docs : MonoBehaviour, Interactable
             Debug.Log("Not now man! Now is not the time for that!");
         }
     }
+
+    private void Succeed(Task task)
+    {
+        Debug.Log("Nice!");
+        task.Perish(true);
+        done = true;
+    }
+    
     void Start()
     {
         taskManager = TaskManager.instance;
         done = false;
+        forgeInProgress = false;
+    }
+
+    void Update()
+    {
+        if (forgeInProgress)
+        {
+            if(Vector2.Distance(playerPosition.position, initialPosition) > moveTolerance)
+                StopCoroutine(coroutine);
+        }
+    }
+
+    IEnumerator Forge(Task task)
+    {
+        forgeInProgress = true;
+        yield return new WaitForSeconds(timeToSucceed);
+        Succeed(task);
     }
 }

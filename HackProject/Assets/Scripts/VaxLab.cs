@@ -15,6 +15,7 @@ public class VaxLab : MonoBehaviour, Interactable
             {
                 Debug.Log("Nice!");
                 task.Perish(true);
+                done = true;
             }
             else
             {
