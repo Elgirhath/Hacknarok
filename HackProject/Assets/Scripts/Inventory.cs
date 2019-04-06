@@ -15,11 +15,21 @@ public class Inventory : MonoBehaviour
     {
         foreach (Item i in itemList)
         {
-            if (i.GetType() == item.GetType())
+            if (i == item)
             {
                 itemList.Remove(i);
                 return;
             }
         }
+    }
+
+    public bool Contains(Item item) {
+        foreach (var listItem in itemList) {
+            if (listItem == item) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
