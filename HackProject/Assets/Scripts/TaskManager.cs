@@ -37,6 +37,18 @@ public class TaskManager : MonoBehaviour
         taskList.Add(Task.CreateTask(taskPrefab, tStruct.name, tStruct.type));
     }
 
+    public Task TaskExists(GameManager.TaskType tType)
+    {
+        foreach (var t in taskList)
+        {
+            if (tType == t.type)
+            {
+                return t;
+            }
+        }
+        return null;
+    }
+
     // Update is called once per frame
     void Update()
     {
