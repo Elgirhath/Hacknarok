@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    private int score;
+    private static int score;
     public static Score instance;
     private Text scoreDisplay;
     private void Awake() {
@@ -13,7 +13,6 @@ public class Score : MonoBehaviour
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
-        
     }
 
     public void ChangeScore(int value)
@@ -24,13 +23,11 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        score = 0;
         scoreDisplay = GetComponent<Text>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 }

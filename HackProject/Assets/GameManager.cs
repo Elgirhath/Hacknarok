@@ -22,7 +22,6 @@ public class GameManager : MonoBehaviour
             instance = this;
         else if (instance != this)
             Destroy(gameObject);
-        
     }
     
     
@@ -45,16 +44,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void QuitGame(bool haveFailed)
+    public void EndGame(bool haveFailed)
     {
-        if (haveFailed)
-        {
-            SceneManager.LoadScene("GameOver");
-        }
-        else
-        {
-            SceneManager.LoadScene("Success");
-        }
+        SceneManager.LoadScene(haveFailed ? "GameOver" : "Success");
+    }
+
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("Level1");
     }
 }
 

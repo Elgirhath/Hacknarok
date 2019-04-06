@@ -10702,8 +10702,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f094a0fa49c64524c8b2395731f28569, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOverScene:
-    m_Handle: 1
   tasks:
   - name: Forge the docs!
     type: 2

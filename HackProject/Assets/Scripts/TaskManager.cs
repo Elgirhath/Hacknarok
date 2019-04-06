@@ -65,7 +65,7 @@ public class TaskManager : MonoBehaviour
 
         if (timeLeft <= 0)
         {
-            gameManager.QuitGame(true);
+            gameManager.EndGame(true);
         }
     }
 }
