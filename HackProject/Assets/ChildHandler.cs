@@ -20,7 +20,7 @@ public class ChildHandler : MonoBehaviour {
 
     public void Destroy() {
         Debug.Log("Destroyin!");
-        Destroy(_child);
-//        Remove();
+        Destroy(_child.gameObject);
+        Remove();
     }
 }
