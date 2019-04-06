@@ -6,6 +6,7 @@ using UnityEngine;
 public class Door : MonoBehaviour, Interactable {
     private Transform player;
 
+    public bool isLocked;
     public float minCloseDist;
 
     private bool _isClosed = true;
