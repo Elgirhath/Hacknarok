@@ -3,9 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Score : MonoBehaviour
-{
-    public static int score;
+public class Score : MonoBehaviour {
+    private int _score;
+
+    public int score {
+        get { return _score; }
+        set {
+            _score = value;
+            scoreDisplay.text = "Score: " + score;
+        }
+    }
     public static Score instance;
     private Text scoreDisplay;
     private void Awake() {
@@ -15,19 +22,8 @@ public class Score : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public void ChangeScore(int value)
-    {
-        score += value;
-        scoreDisplay.text = "Score: " + score;
-    }
-    // Start is called before the first frame update
     void Start()
     {
         scoreDisplay = GetComponent<Text>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
     }
 }

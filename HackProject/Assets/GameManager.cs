@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
     {
         taskManager = TaskManager.instance;
         timer = 0;
-        Score.score = 0;
+        Score.instance.score = 0;
     }
 
     // Update is called once per frame

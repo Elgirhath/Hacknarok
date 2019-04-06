@@ -43,7 +43,7 @@ public class Docs : MonoBehaviour, Interactable
     private void Succeed(Task task)
     {
         Debug.Log("Nice!");
-        task.Perish(true);
+        task.Accomplish();
         done = true;
     }
     
