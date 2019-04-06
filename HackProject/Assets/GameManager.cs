@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
 
     public List<TaskStruct> tasks;
     private TaskManager taskManager;
+    private float timer;
     
     
     private void Awake() {
@@ -29,14 +30,17 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         taskManager = TaskManager.instance;
+        timer = 0;
+        Score.score = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
         for (var i = tasks.Count-1; i >= 0; --i)
         {
-            if (Time.time >= tasks[i].instantiateTime)
+            if (timer >= tasks[i].instantiateTime)
             {
                 taskManager.AddTask(tasks[i]);
                 tasks.RemoveAt(i);
@@ -52,6 +56,15 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene("Level1");
+    }
+
+    public void QuitGame()
+    {
+        #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+        #else
+                Application.Quit();
+        #endif
     }
 }
 

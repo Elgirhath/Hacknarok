@@ -45,6 +45,8 @@ public class InteractController : MonoBehaviour {
 			if (!closest || Vector2.Distance(obj.transform.position, transform.position) < minDist) {
 				closest = obj.transform;
 				minDist = Vector2.Distance(obj.transform.position, transform.position);
+				
+				
 			}
 		}
 		
