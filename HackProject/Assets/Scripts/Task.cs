@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class Task : MonoBehaviour
 {
 
-    private float timeLimit = 10.0f;
+    private float timeLimit = 30.0f;
     private Image timeIndicator;
     private float timeLeft;
     private Score score;
-    private GameManager.TaskType type;
+    public GameManager.TaskType type;
     public static Task CreateTask(GameObject taskPrefab, string taskName, GameManager.TaskType type)
     {
         GameObject newTask = Instantiate(taskPrefab, TaskManager.instance.transform);
@@ -39,7 +39,7 @@ public class Task : MonoBehaviour
         }
     }
 
-    private void Perish(bool haveSucceeded)
+    public void Perish(bool haveSucceeded)
     {
         if(haveSucceeded)
             score.ChangeScore(1);

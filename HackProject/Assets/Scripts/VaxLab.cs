@@ -1,16 +1,39 @@
 ﻿using UnityEngine;
 
-public class VaxLab : MonoBehaviour, Interactable {
+public class VaxLab : MonoBehaviour, Interactable
+{
+    private bool done;
     public Item placebo;
+    private TaskManager taskManager;
     public void Interact(InteractController controller) {
         Inventory inventory = controller.GetComponent<Inventory>();
         if (IsPlaceboEquipped(inventory)) {
             Debug.Log("Vax switched");
             inventory.Remove(placebo);
+            Task task = taskManager.TaskExists(GameManager.TaskType.VAX);
+            if (task)
+            {
+                Debug.Log("Nice!");
+                task.Perish(true);
+            }
+            else
+            {
+                if (done)
+                {
+                    Debug.Log("Dude! You have already done that task!");
+                }
+                Debug.Log("Not now man! Now is not the time for that!");
+            }
         }
     }
 
     private bool IsPlaceboEquipped (Inventory inventory) {
         return inventory.Contains(placebo);
+    }
+
+    void Start()
+    {
+        taskManager = TaskManager.instance;
+        done = false;
     }
 }
