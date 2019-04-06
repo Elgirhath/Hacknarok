@@ -32,7 +32,7 @@ public class InteractController : MonoBehaviour {
 		interactable = newInteractable;
 
 		if (interactable && Input.GetButtonDown("Interact")) {
-			interactable.GetComponent<Interactable>().Interact();
+			Interact();
 		}
 	}
 
@@ -51,7 +51,7 @@ public class InteractController : MonoBehaviour {
 	}
 	
 	public void Interact() {
-		interactable.GetComponent<Interactable>().Interact();
+		interactable.GetComponent<Interactable>().Interact(this);
 	}
 	
 	public void Select() {

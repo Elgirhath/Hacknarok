@@ -9,7 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5eb51950b0d5ef94b987ffab6665229b, type: 3}
-  m_Name: Key
+  m_Script: {fileID: 11500000, guid: bfb65e77b4f3c4c4091d80858c086131, type: 3}
+  m_Name: Vax
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
