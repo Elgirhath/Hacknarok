@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Docs : MonoBehaviour, Interactable
 {
@@ -11,6 +12,12 @@ public class Docs : MonoBehaviour, Interactable
     private RectTransform playerPosition;
     private Vector3 initialPosition;
     private Coroutine coroutine;
+
+    private Vector3 screenPosition;
+    private RectTransform indicatorPosition;
+    private Image indicatorBar;
+    private GameObject progressIndicator;
+    private float startTime;
     
     public float timeToSucceed;
     public void Interact(InteractController controller) {
@@ -45,21 +52,38 @@ public class Docs : MonoBehaviour, Interactable
         taskManager = TaskManager.instance;
         done = false;
         forgeInProgress = false;
+        screenPosition = GameObject.FindWithTag("MainCamera").GetComponent<Camera>().WorldToScreenPoint(transform.position);
+        screenPosition.y += 10;
+        progressIndicator = GameObject.Find("Desk Progress");
+        indicatorPosition = progressIndicator.GetComponent<RectTransform>();
+        indicatorPosition.position = screenPosition;
+        indicatorBar = progressIndicator.GetComponent<Image>();
+        indicatorBar.fillAmount = 1;
+        progressIndicator.SetActive(false);
     }
 
     void Update()
     {
         if (forgeInProgress)
         {
-            if(Vector2.Distance(playerPosition.position, initialPosition) > moveTolerance)
+            indicatorBar.fillAmount = 1 - (Time.time - startTime) / timeToSucceed;
+            if (Vector2.Distance(playerPosition.position, initialPosition) > moveTolerance)
+            {
                 StopCoroutine(coroutine);
+                progressIndicator.SetActive(false);
+                indicatorBar.fillAmount = 1;
+                forgeInProgress = false;
+            }
         }
     }
 
     IEnumerator Forge(Task task)
     {
+        startTime = Time.time;
+        progressIndicator.SetActive(true);
         forgeInProgress = true;
         yield return new WaitForSeconds(timeToSucceed);
         Succeed(task);
+        progressIndicator.SetActive(false);
     }
 }
