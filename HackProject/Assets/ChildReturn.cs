@@ -7,8 +7,12 @@ public class ChildReturn : MonoBehaviour, Interactable
 	public void Interact(InteractController controller) {
 		ChildHandler childHandler = controller.GetComponentInChildren<ChildHandler>();
 		if (childHandler.isEquipped) {
-			Debug.Log("Kid has been napped");
-			childHandler.Destroy();
+			Task task = TaskManager.instance.TaskExists(GameManager.TaskType.BABYSTEAL);
+			if (task) {
+				Debug.Log("Kid has been napped");
+				childHandler.Destroy();
+				task.Accomplish();
+			}
 		}
 	}
 }

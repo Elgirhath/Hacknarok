@@ -35,17 +35,20 @@ public class Task : MonoBehaviour
         timeIndicator.fillAmount = timeLeft/timeLimit;
         if (timeLeft <= 0)
         {
-            Perish(false);
+            Accomplish();
         }
     }
 
-    public void Perish(bool haveSucceeded)
+    public void Accomplish()
     {
-        if(haveSucceeded)
-            score.ChangeScore(1);
-        else
-            score.ChangeScore(-1);
+        score.score++;
         
+        Destroy(gameObject);
+    }
+
+    public void Fail() {
+        score.score--;
+            
         Destroy(gameObject);
     }
 }

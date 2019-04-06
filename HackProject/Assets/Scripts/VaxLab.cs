@@ -2,7 +2,6 @@
 
 public class VaxLab : MonoBehaviour, Interactable
 {
-    private bool done;
     public Item placebo;
     private TaskManager taskManager;
     public void Interact(InteractController controller) {
@@ -14,17 +13,7 @@ public class VaxLab : MonoBehaviour, Interactable
             if (task)
             {
                 Debug.Log("Nice!");
-                task.Perish(true);
-                done = true;
-            }
-            else
-            {
-                if (done)
-                {
-                    Debug.Log("Dude, are you high?! You have already done that task!");
-                }
-                else
-                    Debug.Log("Not now man! Now is not the time for that!");
+                task.Accomplish();
             }
         }
     }
@@ -36,6 +25,5 @@ public class VaxLab : MonoBehaviour, Interactable
     void Start()
     {
         taskManager = TaskManager.instance;
-        done = false;
     }
 }
