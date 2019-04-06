@@ -1,37 +1,66 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class InteractController : MonoBehaviour {
+	public Vector3 tooltipRelativePosition;
+	public float maxDistance;
 
-    public string button;
+	private Transform _interactable;
+	private Transform interactable {
+		get { return _interactable; }
 
-    public Vector3 tooltipRelativePosition;
-    public GameObject tooltipPrefab;
-    private GameObject tooltip;
+		set {
+			if (!value) {
+				_interactable = value;
+				Deselect();
+			}
+			else if (!interactable) {
+				_interactable = value;
+				Select();
+			}
+			else {
+				Deselect();
+				_interactable = value;
+				Select();
+			}
+		}
+	}
+	public GameObject tooltipPrefab;
+	private GameObject tooltip;
 
-    public Interactable interactable;
+	private void Update() {
+		Transform newInteractable = FindInteractable();
+		interactable = newInteractable;
 
-    private bool isSelected = false;
+		if (interactable && Input.GetButtonDown("Interact")) {
+			interactable.GetComponent<Interactable>().Interact();
+		}
+	}
 
-    public void Interact() {
-        interactable.Interact();
-    }
+	private Transform FindInteractable() {
+		GameObject[] items = GameObject.FindGameObjectsWithTag("Interactable");
+		float minDist = 0f;
+		Transform closest = null;
+		foreach (var obj in items) {
+			if (!closest || Vector2.Distance(obj.transform.position, transform.position) < minDist) {
+				closest = obj.transform;
+				minDist = Vector2.Distance(obj.transform.position, transform.position);
+			}
+		}
+		
+		return minDist < maxDistance ? closest : null;
+	}
+	
+	public void Interact() {
+		interactable.GetComponent<Interactable>().Interact();
+	}
+	
+	public void Select() {
+		Vector3 tooltipPosition = interactable.position + tooltipRelativePosition;
+		tooltip = Instantiate(tooltipPrefab, tooltipPosition, Quaternion.identity);
+	}
 
-    public void Select() {
-        Vector3 tooltipPosition = transform.position + tooltipRelativePosition;
-        tooltip = Instantiate(tooltipPrefab, tooltipPosition, Quaternion.identity);
-        isSelected = true;
-    }
-
-    private void Update() {
-        if (!isSelected && isInRange) {
-            Select();
-        }
-    }
-
-    private bool isInRange {
-        get { return true; }
-    }
-
+	public void Deselect() {
+		Destroy(tooltip);
+		tooltip = null;
+	}
 }
