@@ -8,6 +8,7 @@ public class Door : MonoBehaviour, Interactable {
 
     public bool isLocked;
     public float minCloseDist;
+    public Item key;
 
     private bool _isClosed = true;
     private bool isClosed {
@@ -23,6 +24,17 @@ public class Door : MonoBehaviour, Interactable {
     public void Interact(InteractController controller) {
         if (isClosed) {
             player = controller.transform;
+            
+            if (isLocked) {
+                Inventory inventory = player.GetComponent<Inventory>();
+                if (!inventory.Contains(key)) {
+                    Debug.Log("No key");
+                    return;
+                }
+                
+                inventory.Remove(key);
+                isLocked = false;
+            }
             isClosed = false;
         }
     }
