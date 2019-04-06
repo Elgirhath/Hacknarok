@@ -6324,7 +6324,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c1dd03ae508efd44db91431fc9e88009, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aac4db46c32cad34396bf61f498239d9, type: 3}
   m_Color: {r: 0.010703921, g: 1, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -6415,7 +6415,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tooltipRelativePosition: {x: 0, y: 1, z: 0}
   maxDistance: 5
-  tooltipPrefab: {fileID: 93307324450837052, guid: 3efcc56c2d804b94abd33156f0029a5b,
+  tooltipPrefab: {fileID: 2229001707827188723, guid: 3efcc56c2d804b94abd33156f0029a5b,
     type: 3}
 --- !u!114 &542063720
 MonoBehaviour:
@@ -6958,12 +6958,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c1dd03ae508efd44db91431fc9e88009, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aac4db46c32cad34396bf61f498239d9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_DrawMode: 1
+  m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -7036,9 +7036,9 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 2, y: 2}
     adaptiveTilingThreshold: 0.5
-    drawMode: 0
+    drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
@@ -23340,7 +23340,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: c1dd03ae508efd44db91431fc9e88009, type: 3}
+  m_Sprite: {fileID: 21300000, guid: aac4db46c32cad34396bf61f498239d9, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -23360,7 +23360,7 @@ RectTransform:
   m_GameObject: {fileID: 5503114061392682449}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.79999995, y: 0.79999995, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -23431,7 +23431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tooltipRelativePosition: {x: 0, y: 1, z: 0}
   maxDistance: 5
-  tooltipPrefab: {fileID: 93307324450837052, guid: 3efcc56c2d804b94abd33156f0029a5b,
+  tooltipPrefab: {fileID: 2229001707827188723, guid: 3efcc56c2d804b94abd33156f0029a5b,
     type: 3}
 --- !u!4 &5556365298069656976 stripped
 Transform:
