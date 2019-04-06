@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Task : MonoBehaviour
 {
 
-    private float timeLimit = 30.0f;
+    private float timeLimit = 10.0f;
     private Image timeIndicator;
     private float timeLeft;
     private Score score;
