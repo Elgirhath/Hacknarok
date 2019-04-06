@@ -3,6 +3,7 @@
 public class InteractController : MonoBehaviour {
 	public Vector3 tooltipRelativePosition;
 	public float maxDistance;
+	public string interactButton;
 
 	private Transform _interactable;
 	private Transform interactable {
@@ -31,7 +32,7 @@ public class InteractController : MonoBehaviour {
 		Transform newInteractable = FindInteractable();
 		interactable = newInteractable;
 
-		if (interactable && Input.GetButtonDown("Interact")) {
+		if (interactable && Input.GetButtonDown(interactButton)) {
 			Interact();
 		}
 	}
