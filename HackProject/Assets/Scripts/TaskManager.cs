@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TaskManager : MonoBehaviour
-{
+{    
     public float overallTimeLimit;
     private float timeLeft;
     public GameObject taskPrefab;
@@ -37,7 +37,7 @@ public class TaskManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            taskList.Add(Task.CreateTask(taskPrefab, "hehe"));
+            //taskList.Add(Task.CreateTask(taskPrefab, "hehe", ));
         }
 
         timeLeft -= Time.deltaTime;
