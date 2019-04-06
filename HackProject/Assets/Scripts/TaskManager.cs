@@ -21,6 +21,6 @@ public class TaskManager : MonoBehaviour
     private void AddTask()
     {
         //tasksList.Add(Instantiate());
-        tasksList.Add(Instantiate(taskPrefab, transform));
+//        tasksList.Add(Instantiate(taskPrefab, transform));
     }
 }
