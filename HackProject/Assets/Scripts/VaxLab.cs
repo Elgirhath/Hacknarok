@@ -23,7 +23,8 @@ public class VaxLab : MonoBehaviour, Interactable
                 {
                     Debug.Log("Dude, are you high?! You have already done that task!");
                 }
-                Debug.Log("Not now man! Now is not the time for that!");
+                else
+                    Debug.Log("Not now man! Now is not the time for that!");
             }
         }
     }
