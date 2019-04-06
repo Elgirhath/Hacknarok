@@ -41,16 +41,21 @@ public class InteractController : MonoBehaviour {
 		GameObject[] items = GameObject.FindGameObjectsWithTag("Interactable");
 		float minDist = 0f;
 		Transform closest = null;
-		foreach (var obj in items) {
-			if (!closest || Vector2.Distance(obj.transform.position, transform.position) < minDist) {
+		Transform child = transform.GetComponentInChildren<Child>()?.transform;
+		foreach (GameObject obj in items) {
+			if (obj == child?.gameObject)
+				continue;
+			bool isClosest = Vector2.Distance(obj.transform.position, transform.position) < minDist;
+			if (!closest || isClosest) {
 				closest = obj.transform;
 				minDist = Vector2.Distance(obj.transform.position, transform.position);
 				
 				
 			}
 		}
-		
-		return minDist < maxDistance ? closest : null;
+
+		Transform target = minDist < maxDistance ? closest : child;
+		return target;
 	}
 	
 	public void Interact() {
