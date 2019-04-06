@@ -36,7 +36,7 @@ public class InteractController : MonoBehaviour {
 			RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, direction.magnitude);
 			if (hit && hit.collider && hit.transform != newInteractable)
 			{
-				if(hit.transform.parent != newInteractable)
+				if(hit.transform.parent != newInteractable && !hit.transform.CompareTag("Window"))
 					newInteractable = null;
 			}
 		}
@@ -60,8 +60,6 @@ public class InteractController : MonoBehaviour {
 			if (!closest || isClosest) {
 				closest = obj.transform;
 				minDist = Vector2.Distance(obj.transform.position, transform.position);
-				
-				
 			}
 		}
 

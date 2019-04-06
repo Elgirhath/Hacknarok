@@ -23,7 +23,6 @@ public class DoctorVision : MonoBehaviour {
         forward = GetComponent<DoctorMovement>().moveDirection;
         
         foreach (var player in players) {
-//            Debug.Log(player.name);
             RectTransform rect = player.GetComponent<RectTransform>();
             Vector3[] corners = new Vector3[4];
             rect.GetWorldCorners(corners);
