@@ -5,14 +5,19 @@ using UnityEngine.UI;
 
 public class Task : MonoBehaviour
 {
+
     private float timeLimit = 30.0f;
     private Image timeIndicator;
     private float timeLeft;
-    public static Task CreateTask(GameObject taskPrefab, string taskName)
+    private Score score;
+    private GameManager.TaskType type;
+    public static Task CreateTask(GameObject taskPrefab, string taskName, GameManager.TaskType type)
     {
         GameObject newTask = Instantiate(taskPrefab, TaskManager.instance.transform);
         newTask.GetComponentInChildren<Text>().text = taskName;
-        return newTask.GetComponent<Task>();
+        Task task = newTask.GetComponent<Task>();
+        task.type = type;
+        return task;
     }
     
     // Start is called before the first frame update
@@ -20,6 +25,7 @@ public class Task : MonoBehaviour
     {
         timeIndicator = GetComponentInChildren<Image>();
         timeLeft = timeLimit;
+        score = Score.instance;
     }
 
     // Update is called once per frame
@@ -36,7 +42,10 @@ public class Task : MonoBehaviour
     private void Perish(bool haveSucceeded)
     {
         if(haveSucceeded)
-            
+            score.ChangeScore(1);
+        else
+            score.ChangeScore(-1);
+        
         Destroy(gameObject);
     }
 }
