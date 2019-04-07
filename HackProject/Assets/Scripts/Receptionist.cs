@@ -46,7 +46,7 @@ public class Receptionist : MonoBehaviour, Interactable
     {
         talkInProgress = false;
         screenPosition = GameObject.FindWithTag("MainCamera").GetComponent<Camera>().WorldToScreenPoint(transform.position);
-        screenPosition.y += 10;
+        screenPosition.y += 17;
         progressIndicator = GameObject.Find("Talk Progress");
         indicatorPosition = progressIndicator.GetComponent<RectTransform>();
         indicatorPosition.position = screenPosition;
