@@ -166,10 +166,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83679414802c45429630d296512ef59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tooltipRelativePosition: {x: 0, y: 1, z: 0}
+  tooltipRelativePosition: {x: 0, y: 2, z: 0}
   maxDistance: 5
   interactButton: Interact
-  tooltipPrefab: {fileID: 2229001707827188723, guid: 3efcc56c2d804b94abd33156f0029a5b,
+  tooltipPrefab: {fileID: 4570488175427699532, guid: 11a113b28015df544b1d93ffac877f8e,
     type: 3}
 --- !u!114 &748108200334559333
 MonoBehaviour:
