@@ -25,57 +25,21 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton(xInput))
-        {
-            MoveX();
-        }
-        if(Input.GetButton(yInput))
-        {
-            MoveY();
-        }
+        Move();
     }
 
-    private void MoveX()
-    {
-        float direction = Input.GetAxisRaw(xInput);
-        tr.position += Vector3.right * moveSpeed * direction * Time.deltaTime;
-        if (direction < 0)
-        {
-            if(facingRight)
-                FlipX();
-        }
-        else
-        {
-            if (!facingRight)
-                FlipX();
-        }
-    }
-
-    private void MoveY()
-    {
-        float direction = Input.GetAxisRaw(yInput);
-        tr.position += Vector3.up * moveSpeed * direction * Time.deltaTime;
-        if (direction < 0)
-        {
-            if(facingUp)
-                FlipY();
-        }
-        else
-        {
-            if (!facingUp)
-                FlipY();
-        }
-    }
-
-    private void FlipX()
-    {
-        facingRight = !facingRight;
-        sprite.flipX = !sprite.flipX;
-    }
-
-    private void FlipY()
-    {
-        facingUp = !facingUp;
-        sprite.flipY = !sprite.flipY;
+    private void Move() {
+        Rigidbody2D rb = tr.GetComponent<Rigidbody2D>();
+        float vertExtent = Camera.main.orthographicSize;    
+        float horzExtent = vertExtent * Screen.width / Screen.height;
+        
+        float moveX = Input.GetAxisRaw(xInput);
+        float moveY = Input.GetAxisRaw(yInput);
+        float xPos = rb.position.x + moveSpeed * moveX * Time.deltaTime;
+        float yPos = rb.position.y + moveSpeed * moveY * Time.deltaTime;
+        Camera cam = Camera.main;
+        xPos = Mathf.Clamp(xPos, cam.transform.position.x - horzExtent, cam.transform.position.x + horzExtent);
+        yPos = Mathf.Clamp(yPos, cam.transform.position.y - vertExtent, cam.transform.position.y + vertExtent);
+        rb.MovePosition(new Vector2(xPos, yPos));
     }
 }
