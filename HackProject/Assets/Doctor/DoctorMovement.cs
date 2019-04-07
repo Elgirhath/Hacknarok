@@ -43,8 +43,17 @@ public class DoctorMovement : MonoBehaviour {
         }
         
         moveDirection = pathNodes[nextNodeIndex].position - transform.position;
-        animator.SetFloat("MoveX", moveDirection.x);
-        animator.SetFloat("MoveY", moveDirection.y);
+        float moveX = moveDirection.x;
+        float moveY = moveDirection.y;
+        if (Mathf.Abs(moveX) > Mathf.Abs(moveY)) {
+            animator.SetFloat("MoveX", moveDirection.x);
+            animator.SetFloat("MoveY", 0f);
+        }
+        else {
+            animator.SetFloat("MoveY", moveDirection.y);
+            animator.SetFloat("MoveX", 0f);
+        }
+
         transform.position += moveDirection.normalized * moveSpeed * Time.deltaTime;
         
         if (IsDestReached())
@@ -52,9 +61,11 @@ public class DoctorMovement : MonoBehaviour {
     }
 
     private void NodeProceed() {
+        if (nextNodeIndex == 0 || nextNodeIndex == pathNodes.Count - 1) {
+            freezed = true;
+            freezeLeft = freezeTime;
+        }
         UpdateIndex();
-        freezed = true;
-        freezeLeft = freezeTime;
     }
 
     private bool IsDestReached() {
