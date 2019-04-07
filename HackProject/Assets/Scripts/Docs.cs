@@ -53,7 +53,7 @@ public class Docs : MonoBehaviour, Interactable
         done = false;
         forgeInProgress = false;
         screenPosition = GameObject.FindWithTag("MainCamera").GetComponent<Camera>().WorldToScreenPoint(transform.position);
-        screenPosition.y += 17;
+        screenPosition.y += 22;
         progressIndicator = GameObject.Find("Desk Progress");
         indicatorPosition = progressIndicator.GetComponent<RectTransform>();
         indicatorPosition.position = screenPosition;
