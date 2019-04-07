@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class InteractController : MonoBehaviour {
 	public Vector3 tooltipRelativePosition;
@@ -84,7 +85,10 @@ public class InteractController : MonoBehaviour {
 	
 	public void Select() {
 		Vector3 tooltipPosition = interactable.position + tooltipRelativePosition;
-		tooltip = Instantiate(tooltipPrefab, tooltipPosition, Quaternion.identity);
+		Vector3 screenPos = Camera.main.WorldToScreenPoint(tooltipPosition);
+		Transform ui = GameObject.FindGameObjectWithTag("UI").transform;
+		tooltip = Instantiate(tooltipPrefab, screenPos, Quaternion.identity, ui);
+		tooltip.GetComponentInChildren<Text>().text = interactButton == "Interact" ? "/" : "E";
 	}
 
 	public void Deselect() {
