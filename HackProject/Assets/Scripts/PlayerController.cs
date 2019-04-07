@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public string xInput;
     public string yInput;
+    public Vector2 currentDirection = new Vector2();
 
     private Rigidbody2D rb;
     private SpriteRenderer sprite;
@@ -28,6 +29,8 @@ public class PlayerController : MonoBehaviour
         
         float moveX = Input.GetAxisRaw(xInput);
         float moveY = Input.GetAxisRaw(yInput);
+        currentDirection.x = moveX;
+        currentDirection.y = moveY;
         float xPos = rb.position.x + moveSpeed * moveX * Time.deltaTime;
         float yPos = rb.position.y + moveSpeed * moveY * Time.deltaTime;
         Camera cam = Camera.main;
