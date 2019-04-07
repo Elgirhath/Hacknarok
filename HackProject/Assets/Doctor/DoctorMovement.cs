@@ -19,6 +19,8 @@ public class DoctorMovement : MonoBehaviour {
 
     private bool freezed = false;
     private float freezeLeft;
+
+    private Animator animator;
     
     // Start is called before the first frame update
     void Start()
@@ -28,6 +30,7 @@ public class DoctorMovement : MonoBehaviour {
         }
 
         transform.position = pathNodes[0].position;
+        animator = GetComponent<Animator>();
     }
 
     private void Update() {
@@ -40,6 +43,8 @@ public class DoctorMovement : MonoBehaviour {
         }
         
         moveDirection = pathNodes[nextNodeIndex].position - transform.position;
+        animator.SetFloat("MoveX", moveDirection.x);
+        animator.SetFloat("MoveY", moveDirection.y);
         transform.position += moveDirection.normalized * moveSpeed * Time.deltaTime;
         
         if (IsDestReached())
