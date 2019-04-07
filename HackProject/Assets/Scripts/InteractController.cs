@@ -30,22 +30,33 @@ public class InteractController : MonoBehaviour {
 
 	private void Update() {
 		Transform newInteractable = FindInteractable();
-		if (newInteractable)
-		{
-			Vector2 direction = newInteractable.position - transform.position;
-			RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, direction.magnitude);
-			if (hit && hit.collider && hit.transform != newInteractable)
-			{
-				if(hit.transform.parent != newInteractable && !hit.transform.CompareTag("Window"))
-					newInteractable = null;
-			}
-		}
+		newInteractable = IsAvailable(newInteractable) ? newInteractable : null;
 
 		interactable = newInteractable;
 
 		if (interactable && Input.GetButtonDown(interactButton)) {
 			Interact();
 		}
+	}
+
+	private bool IsAvailable(Transform item) {
+		if (!item)
+			return false;
+		Vector2 direction = item.position - transform.position;
+		RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, direction, direction.magnitude);
+		foreach (var hit in hits) {
+			if (hit.transform == item)
+				continue;
+			if (hit.transform.parent == item) 
+				continue;
+			if (hit.transform.CompareTag("Window"))
+				continue;
+			if (hit.transform.CompareTag("Player"))
+				continue;
+			return false;
+		}
+
+		return true;
 	}
 
 	private Transform FindInteractable() {

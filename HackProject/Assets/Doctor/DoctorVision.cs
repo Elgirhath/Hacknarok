@@ -31,8 +31,8 @@ public class DoctorVision : MonoBehaviour {
                 RaycastHit2D hit = Physics2D.Raycast(transform.position, corner - transform.position, maxDistance);
                 if (hit.collider == rect.GetComponent<Collider2D>()) {
                     float angle = Vector2.Angle(hit.point - (Vector2) transform.position, forward);
-                    if (angle < visionAngle)
-                        Debug.Log("Seen: " + rect.name);
+//                    if (angle < visionAngle)
+//                        Debug.Log("Seen: " + rect.name);
                 }
             }
         }

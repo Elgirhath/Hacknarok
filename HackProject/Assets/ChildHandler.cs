@@ -6,6 +6,7 @@ public class ChildHandler : MonoBehaviour {
     public bool isEquipped = false;
     public Child _child;
     public void Equip(Child child) {
+        Debug.Log(transform.name);
         _child = child;
         _child.transform.parent = transform;
         _child.transform.localPosition = -Vector3.forward;
