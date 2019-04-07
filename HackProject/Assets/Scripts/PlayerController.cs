@@ -8,28 +8,21 @@ public class PlayerController : MonoBehaviour
     public string xInput;
     public string yInput;
 
-    private RectTransform tr;
+    private Rigidbody2D rb;
     private SpriteRenderer sprite;
-
-    private bool facingUp;
-    private bool facingRight;
-    // Start is called before the first frame update
+    
     void Start()
     {
-        tr = GetComponent<RectTransform>();
+        rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
-        facingUp = true;
-        facingRight = true;
     }
 
-    // Update is called once per frame
     void Update()
     {
         Move();
     }
 
     private void Move() {
-        Rigidbody2D rb = tr.GetComponent<Rigidbody2D>();
         float vertExtent = Camera.main.orthographicSize;    
         float horzExtent = vertExtent * Screen.width / Screen.height;
         
