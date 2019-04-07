@@ -21,6 +21,13 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Move();
+        SetAnimationDirection();
+    }
+
+    private void SetAnimationDirection() {
+        Animator animator = GetComponent<Animator>();
+        animator.SetFloat("MoveX", currentDirection.x);
+        animator.SetFloat("MoveY", currentDirection.y);
     }
 
     private void Move() {
