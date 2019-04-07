@@ -1,23 +1,23 @@
 fileFormatVersion: 2
-guid: 8fc172a23f7af8541b625b87cbba7ae7
+guid: 42b19d06dd5196245bc7f571ff822309
 TextureImporter:
   fileIDToRecycleName:
-    21300000: DocAtlas_0
-    21300002: DocAtlas_1
-    21300004: DocAtlas_2
-    21300006: DocAtlas_3
-    21300008: DocAtlas_4
-    21300010: DocAtlas_5
-    21300012: DocAtlas_6
-    21300014: DocAtlas_7
-    21300016: DocAtlas_8
-    21300018: DocAtlas_9
-    21300020: DocAtlas_10
-    21300022: DocAtlas_11
-    21300024: DocAtlas_12
-    21300026: DocAtlas_13
-    21300028: DocAtlas_14
-    21300030: DocAtlas_15
+    21300000: DocAtlas2_0
+    21300002: DocAtlas2_1
+    21300004: DocAtlas2_2
+    21300006: DocAtlas2_3
+    21300008: DocAtlas2_4
+    21300010: DocAtlas2_5
+    21300012: DocAtlas2_6
+    21300014: DocAtlas2_7
+    21300016: DocAtlas2_8
+    21300018: DocAtlas2_9
+    21300020: DocAtlas2_10
+    21300022: DocAtlas2_11
+    21300024: DocAtlas2_12
+    21300026: DocAtlas2_13
+    21300028: DocAtlas2_14
+    21300030: DocAtlas2_15
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DocAtlas_0
+      name: DocAtlas2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -114,13 +114,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fa8c84c511c4f6c468c60f16714324f8
+      spriteID: d48dcf2f69540cd43a6c196c883b53c7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DocAtlas_1
+      name: DocAtlas2_1
       rect:
         serializedVersion: 2
         x: 32
@@ -134,13 +134,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3918b6753ae2e5347949f70815d8778f
+      spriteID: 2a8151bf15c1b0f44838bbb3e83fdbc6
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DocAtlas_2
+      name: DocAtlas2_2
       rect:
         serializedVersion: 2
         x: 64
@@ -154,13 +154,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 998c7d917f529d24590b5b4f4f41f75b
+      spriteID: 61333d358a070dc448aeb9291db0c424
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DocAtlas_3
+      name: DocAtlas2_3
       rect:
         serializedVersion: 2
         x: 96
@@ -174,13 +174,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4dd4db32b5b77f04e9fe9e666f11937c
+      spriteID: bea084aaf07023648a4ae98901c087cc
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DocAtlas_4
+      name: DocAtlas2_4
       rect:
         serializedVersion: 2
         x: 0
@@ -194,13 +194,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 69e768f49d863af4d82817df0211b87c
+      spriteID: 8fb6a0586a0bf7440bc5ec061a653147
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DocAtlas_5
+      name: DocAtlas2_5
       rect:
         serializedVersion: 2
         x: 32
@@ -214,13 +214,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6c23c3682df584b4d8fdba6ec36df9ea
+      spriteID: c67f6b720e54abb4b895679570aca208
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DocAtlas_6
+      name: DocAtlas2_6
       rect:
         serializedVersion: 2
         x: 64
@@ -234,13 +234,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6dab684867c71a4d910279e930d08e7
+      spriteID: f74eb39b7fb865c459351a84c418d758
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DocAtlas_7
+      name: DocAtlas2_7
       rect:
         serializedVersion: 2
         x: 96
@@ -254,13 +254,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b833beba251c51d47a278f0eb513728c
+      spriteID: 7066767511ba1c84f8ae5a9434da5af7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DocAtlas_8
+      name: DocAtlas2_8
       rect:
         serializedVersion: 2
         x: 0
@@ -274,13 +274,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 108b25018c632214b88b9c385b160530
+      spriteID: 0add3980327dd3744a2d3f33c802835b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DocAtlas_9
+      name: DocAtlas2_9
       rect:
         serializedVersion: 2
         x: 32
@@ -294,13 +294,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1013b42ee9bd31649abf1e60ade75664
+      spriteID: 88dbd96026ced70478d06a2d7ac5d963
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DocAtlas_10
+      name: DocAtlas2_10
       rect:
         serializedVersion: 2
         x: 64
@@ -314,13 +314,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1465ca7faba7d5340a8bf2f530fdec0c
+      spriteID: bcbed63db5e24d44581b2766978ef3c1
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DocAtlas_11
+      name: DocAtlas2_11
       rect:
         serializedVersion: 2
         x: 96
@@ -334,13 +334,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cc91466216343041be70b6dab88f426
+      spriteID: 243feed5dd1195349ac2e7e19be5dbe0
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DocAtlas_12
+      name: DocAtlas2_12
       rect:
         serializedVersion: 2
         x: 0
@@ -354,13 +354,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7bb214def03276c44a34af347fe67645
+      spriteID: 887ce77ac52f0d54cb03bcfc9b445ce4
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DocAtlas_13
+      name: DocAtlas2_13
       rect:
         serializedVersion: 2
         x: 32
@@ -374,13 +374,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b699c25320c35984293bceca16a3b50d
+      spriteID: dfbff138b73c7e2488c421fadb23a94c
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DocAtlas_14
+      name: DocAtlas2_14
       rect:
         serializedVersion: 2
         x: 64
@@ -394,13 +394,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 638ca5745fb857443afca1be4b343bc4
+      spriteID: fd4e968e431686c49bdf415e5719e405
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DocAtlas_15
+      name: DocAtlas2_15
       rect:
         serializedVersion: 2
         x: 96
@@ -414,7 +414,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7903f576f1cc144097d68a1b1112330
+      spriteID: 25724bce2001f384ea6e1d9c153b7e84
       vertices: []
       indices: 
       edges: []
@@ -422,7 +422,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 42320813dbde8d84bb471fdcc2324a19
+    spriteID: 9a053318cac987146aa558c19414df9c
     vertices: []
     indices: 
     edges: []
