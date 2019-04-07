@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Receptionist : MonoBehaviour, Interactable
 {
+    public GameObject progressPrefab;
     private bool talkInProgress;
     private bool blockTalk;
     private GameObject interactedPlayer;
@@ -47,7 +48,8 @@ public class Receptionist : MonoBehaviour, Interactable
         talkInProgress = false;
         screenPosition = GameObject.FindWithTag("MainCamera").GetComponent<Camera>().WorldToScreenPoint(transform.position);
         screenPosition.y += 22;
-        progressIndicator = GameObject.Find("Talk Progress");
+        //progressIndicator = GameObject.Find("Talk Progress");
+        progressIndicator = Instantiate(progressPrefab, GameObject.FindGameObjectWithTag("UI").transform);
         indicatorPosition = progressIndicator.GetComponent<RectTransform>();
         indicatorPosition.position = screenPosition;
         indicatorBar = progressIndicator.GetComponent<Image>();
