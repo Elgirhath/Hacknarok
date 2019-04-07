@@ -35,7 +35,7 @@ public class Task : MonoBehaviour
         timeIndicator.fillAmount = timeLeft/timeLimit;
         if (timeLeft <= 0)
         {
-            Accomplish();
+            Fail();
         }
     }
 
