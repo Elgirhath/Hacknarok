@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Receptionist : MonoBehaviour, Interactable
 {
+    private bool isGuard;
     public GameObject progressPrefab;
     private bool talkInProgress;
     private bool blockTalk;
@@ -20,6 +21,7 @@ public class Receptionist : MonoBehaviour, Interactable
     private GameObject progressIndicator;
     private float startTime;
     private List<Collider2D> colliders = new List<Collider2D>();
+    private SpriteRenderer spriteRenderer;
     
     public float timeToSucceed;
     public void Interact(InteractController controller)
@@ -63,6 +65,9 @@ public class Receptionist : MonoBehaviour, Interactable
                 continue;
             colliders.Add(trigger);
         }
+
+        isGuard = name != "Receptionist";
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void Update()
@@ -73,6 +78,8 @@ public class Receptionist : MonoBehaviour, Interactable
             if (Vector2.Distance(playerPosition.position, initialPosition) > moveTolerance)
             {
                 StopCoroutine(coroutine);
+                if(isGuard)
+                    spriteRenderer.flipX = false;
                 progressIndicator.SetActive(false);
                 indicatorBar.fillAmount = 1;
                 talkInProgress = false;
@@ -82,6 +89,10 @@ public class Receptionist : MonoBehaviour, Interactable
 
     IEnumerator Talk()
     {
+        if (isGuard)
+        {
+            spriteRenderer.flipX = true;
+        }
         startTime = Time.time;
         progressIndicator.SetActive(true);
         talkInProgress = true;
@@ -94,6 +105,10 @@ public class Receptionist : MonoBehaviour, Interactable
         foreach (Collider2D col in colliders)
         {
             col.enabled = true;
+        }        
+        if (isGuard)
+        {
+            spriteRenderer.flipX = false;
         }
     }
 }
