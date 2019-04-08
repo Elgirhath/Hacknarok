@@ -43,6 +43,6 @@ public class PlayerController : MonoBehaviour
         Camera cam = Camera.main;
         xPos = Mathf.Clamp(xPos, cam.transform.position.x - horzExtent, cam.transform.position.x + horzExtent);
         yPos = Mathf.Clamp(yPos, cam.transform.position.y - vertExtent, cam.transform.position.y + vertExtent);
-        rb.MovePosition(new Vector2(xPos, yPos));
+        rb.MovePosition(new Vector3(xPos, yPos, yPos));
     }
 }
