@@ -10,7 +10,6 @@ public class DoctorMovement : MonoBehaviour {
 
     private List<Transform> pathNodes = new List<Transform>();
     private int nextNodeIndex = 1;
-    private int lastNodeIndex = 0;
     private bool isMovingForward = true;
 
     private float threshold = 1f;
@@ -21,6 +20,7 @@ public class DoctorMovement : MonoBehaviour {
     private float freezeLeft;
 
     private Animator animator;
+    private DoctorVision vision;
     
     // Start is called before the first frame update
     void Start()
@@ -31,6 +31,7 @@ public class DoctorMovement : MonoBehaviour {
 
         transform.position = pathNodes[0].position;
         animator = GetComponent<Animator>();
+        vision = GetComponent<DoctorVision>();
     }
 
     private void Update() {
@@ -43,18 +44,13 @@ public class DoctorMovement : MonoBehaviour {
         }
         
         moveDirection = pathNodes[nextNodeIndex].position - transform.position;
-        float moveX = moveDirection.x;
-        float moveY = moveDirection.y;
-        if (Mathf.Abs(moveX) > Mathf.Abs(moveY)) {
-            animator.SetFloat("MoveX", moveDirection.x);
-            animator.SetFloat("MoveY", 0f);
-        }
-        else {
-            animator.SetFloat("MoveY", moveDirection.y);
-            animator.SetFloat("MoveX", 0f);
-        }
 
         transform.position += moveDirection.normalized * moveSpeed * Time.deltaTime;
+
+        if (moveDirection.magnitude > 1e-4)
+            vision.viewDirection = moveDirection.normalized;
+        
+        UpdateAnimation();
         
         if (IsDestReached())
             NodeProceed();
@@ -80,7 +76,19 @@ public class DoctorMovement : MonoBehaviour {
             isMovingForward = false;
         }
 
-        lastNodeIndex = nextNodeIndex;
         nextNodeIndex += isMovingForward ? 1 : -1;
+    }
+
+    private void UpdateAnimation() {
+        float moveX = moveDirection.x;
+        float moveY = moveDirection.y;
+        if (Mathf.Abs(moveX) > Mathf.Abs(moveY)) {
+            animator.SetFloat("MoveX", moveDirection.x);
+            animator.SetFloat("MoveY", 0f);
+        }
+        else {
+            animator.SetFloat("MoveY", moveDirection.y);
+            animator.SetFloat("MoveX", 0f);
+        }
     }
 }

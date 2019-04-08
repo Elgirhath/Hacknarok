@@ -3550,7 +3550,7 @@ GameObject:
   - component: {fileID: 86034962}
   - component: {fileID: 86034964}
   - component: {fileID: 86034963}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ReceptionistVisionWarning2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8307,7 +8307,7 @@ GameObject:
   m_Layer: 0
   m_Name: Node
   m_TagString: Untagged
-  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -9768,7 +9768,7 @@ GameObject:
   m_Layer: 0
   m_Name: Node (2)
   m_TagString: Untagged
-  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -13986,7 +13986,7 @@ GameObject:
   m_Layer: 0
   m_Name: Node (6)
   m_TagString: Untagged
-  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -22383,7 +22383,7 @@ GameObject:
   - component: {fileID: 564043214}
   - component: {fileID: 564043213}
   - component: {fileID: 564043215}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: DutyDoctor
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -22482,6 +22482,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visionAngle: 40
   maxDistance: 10
+  viewDirection: {x: 0, y: 0}
 --- !u!50 &564043212
 Rigidbody2D:
   serializedVersion: 4
@@ -27573,7 +27574,7 @@ GameObject:
   - component: {fileID: 712457617}
   - component: {fileID: 712457619}
   - component: {fileID: 712457618}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ReceptionistVisionWarning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34831,7 +34832,7 @@ GameObject:
   m_Layer: 0
   m_Name: Node (5)
   m_TagString: Untagged
-  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -43194,7 +43195,7 @@ GameObject:
   m_Layer: 0
   m_Name: Node
   m_TagString: Untagged
-  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -43379,7 +43380,7 @@ GameObject:
   - component: {fileID: 1136394081}
   - component: {fileID: 1136394083}
   - component: {fileID: 1136394082}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ReceptionistVisionEnd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44156,7 +44157,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1154275076}
   - component: {fileID: 1154275077}
-  - component: {fileID: 1154275078}
   m_Layer: 0
   m_Name: WarningIndicator
   m_TagString: Untagged
@@ -44226,32 +44226,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1154275078
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1154275075}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 1
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 1.28}
-    newSize: {x: 0.6, y: 0.6}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.0001, y: 0.0001}
-  m_EdgeRadius: 0
 --- !u!4 &1158852240 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5556365298069656976, guid: b07efcbcc27aea04b86ba30014a67a50,
@@ -53775,7 +53749,7 @@ GameObject:
   - component: {fileID: 1380588500}
   - component: {fileID: 1380588499}
   - component: {fileID: 1380588498}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: DutyDoctor (1)
   m_TagString: Interactable
   m_Icon: {fileID: 0}
@@ -53875,6 +53849,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visionAngle: 40
   maxDistance: 10
+  viewDirection: {x: 0, y: 0}
 --- !u!114 &1380588503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63368,7 +63343,7 @@ GameObject:
   m_Layer: 0
   m_Name: Node (1)
   m_TagString: Untagged
-  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -74310,7 +74285,7 @@ GameObject:
   m_Layer: 0
   m_Name: Node (4)
   m_TagString: Untagged
-  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -79629,7 +79604,7 @@ GameObject:
   m_Layer: 0
   m_Name: Node (3)
   m_TagString: Untagged
-  m_Icon: {fileID: 4422084297763085224, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -83286,21 +83261,6 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 748108200334559336, guid: ca58626c12e11eb4eb128cfa9f7e7ff0,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 748108200334559336, guid: ca58626c12e11eb4eb128cfa9f7e7ff0,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 748108200334559336, guid: ca58626c12e11eb4eb128cfa9f7e7ff0,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.drawMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 748108200334559339, guid: ca58626c12e11eb4eb128cfa9f7e7ff0,
         type: 3}
       propertyPath: m_Material
@@ -83314,6 +83274,21 @@ PrefabInstance:
     - target: {fileID: 5061814416420806887, guid: ca58626c12e11eb4eb128cfa9f7e7ff0,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 748108200334559336, guid: ca58626c12e11eb4eb128cfa9f7e7ff0,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 748108200334559336, guid: ca58626c12e11eb4eb128cfa9f7e7ff0,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 748108200334559336, guid: ca58626c12e11eb4eb128cfa9f7e7ff0,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

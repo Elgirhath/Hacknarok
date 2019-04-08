@@ -57,9 +57,11 @@ public class Receptionist : MonoBehaviour, Interactable
         progressIndicator.SetActive(false);
         interactedPlayer = null;
         blockTalk = false;
-        foreach (Transform child in transform)
-        {
-            colliders.Add(child?.GetComponent<Collider2D>());
+        foreach (Transform child in transform) {
+            Collider2D trigger = child.GetComponent<Collider2D>();
+            if (!trigger)
+                continue;
+            colliders.Add(trigger);
         }
     }
 
