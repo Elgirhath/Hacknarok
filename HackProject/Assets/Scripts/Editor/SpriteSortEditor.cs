@@ -12,10 +12,14 @@ public class SpriteSortEditor : Editor {
 
 		SpriteRenderOrder targ = (SpriteRenderOrder) target;
 
-		layerName = EditorGUILayout.TextField("Layer Name", "1");
+		layerName = EditorGUILayout.TextField("Layer Name", "Default");
 
 		if (GUILayout.Button("Sort")) {
 			targ.SortByY(layerName);
+		}
+		
+		if (GUILayout.Button("Apply sprite groups")) {
+			targ.ApplySpriteGroups(layerName);
 		}
 	}
 }

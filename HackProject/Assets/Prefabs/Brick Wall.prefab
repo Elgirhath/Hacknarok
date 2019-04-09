@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4847827812989182936}
   - component: {fileID: 4847827812989182943}
+  - component: {fileID: 4734724526652565168}
   m_Layer: 0
   m_Name: Brick Wall
   m_TagString: Untagged
@@ -60,6 +61,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &4734724526652565168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4847827812989182942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36c8b8352207efb49810bd96d3841cea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4847827813810128820
 PrefabInstance:
   m_ObjectHideFlags: 0
