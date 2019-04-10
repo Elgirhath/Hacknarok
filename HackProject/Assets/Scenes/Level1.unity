@@ -31217,6 +31217,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -0.089
       objectReference: {fileID: 0}
+    - target: {fileID: 748108200334559336, guid: ca58626c12e11eb4eb128cfa9f7e7ff0,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 748108200334559336, guid: ca58626c12e11eb4eb128cfa9f7e7ff0,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.48
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8617161861749820201, guid: ca58626c12e11eb4eb128cfa9f7e7ff0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ca58626c12e11eb4eb128cfa9f7e7ff0, type: 3}
@@ -47373,7 +47383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e6cb3e47675ff4d91cb701e7a26acd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  runOnStart: 0
+  runOnStart: 1
 --- !u!4 &883366812 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3789805498865164260, guid: 3f19a5fee0b7d454885edd5124bc1bc9,
@@ -118081,21 +118091,6 @@ PrefabInstance:
     - target: {fileID: 5061814416420806887, guid: ca58626c12e11eb4eb128cfa9f7e7ff0,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 748108200334559336, guid: ca58626c12e11eb4eb128cfa9f7e7ff0,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 748108200334559336, guid: ca58626c12e11eb4eb128cfa9f7e7ff0,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.48
-      objectReference: {fileID: 0}
-    - target: {fileID: 748108200334559336, guid: ca58626c12e11eb4eb128cfa9f7e7ff0,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.drawMode
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
