@@ -10,7 +10,8 @@ public class Score : MonoBehaviour {
         get { return _score; }
         set {
             _score = value;
-            scoreDisplay.text = "Score: " + score;
+            if (scoreDisplay)
+                scoreDisplay.text = "Score: " + score;
         }
     }
     public static Score instance;

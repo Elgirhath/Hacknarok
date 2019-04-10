@@ -24,24 +24,16 @@ public class DoctorVision : MonoBehaviour {
     private void CheckVision() {
         Debug.DrawRay(transform.position, viewDirection * 2f, Color.blue);
         foreach (var player in players) {
-            RectTransform rect = player.GetComponent<RectTransform>();
-            Vector3[] corners = new Vector3[1];
-            corners[0] = player.transform.TransformPoint(player.GetComponent<BoxCollider2D>().offset);
-//            rect.GetWorldCorners(corners);
-
-            foreach (var corner in corners) {
-                float dist = Vector2.Distance(corner, transform.position);
-                if (dist > maxDistance)
-                    continue;
-                Vector2 direction = (corner - transform.position).normalized;
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, dist);
-                Debug.DrawRay(transform.position, direction * dist, Color.red);
-                if (!hit || hit.collider.CompareTag("Player")) {
-                    float angle = Vector2.Angle(direction, viewDirection);
-                    Debug.Log(angle);
-                    if (angle < visionAngle)
-                        gameManager.EndGame(true);
-                }
+            float dist = Vector2.Distance(player.transform.position, transform.position);
+            if (dist > maxDistance)
+                continue;
+            Vector2 direction = (player.transform.position - transform.position).normalized;
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, dist);
+            Debug.DrawRay(transform.position, direction * dist, Color.red);
+            if (!hit || hit.collider.CompareTag("Player")) {
+                float angle = Vector2.Angle(direction, viewDirection);
+                if (angle < visionAngle)
+                    gameManager.EndGame(true);
             }
         }
     }

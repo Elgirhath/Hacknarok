@@ -15,6 +15,7 @@ public class Door : MonoBehaviour, Interactable {
         get { return _isClosed; }
         set {
             _isClosed = value;
+            GetComponent<Collider2D>().enabled = value;
             foreach (Transform child in transform) {
                 child.gameObject.SetActive(value);
             }

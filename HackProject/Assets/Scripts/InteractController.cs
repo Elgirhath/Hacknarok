@@ -43,12 +43,17 @@ public class InteractController : MonoBehaviour {
 	private bool IsAvailable(Transform item) {
 		if (!item)
 			return false;
-		Vector2 direction = item.position - transform.position;
-		RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, direction, direction.magnitude);
+		SpriteGroup group = item.GetComponentInParent<SpriteGroup>();
+		Vector2 itemPos = group?.transform?.position ?? item.position;
+		Vector2 pos = transform.position;
+		Vector2 direction = itemPos - pos;
+		RaycastHit2D[] hits = Physics2D.RaycastAll(pos, direction, direction.magnitude);
 		foreach (var hit in hits) {
 			if (hit.transform == item)
 				continue;
 			if (hit.transform.parent == item) 
+				continue;
+			if (hit.transform.GetComponentInParent<SpriteGroup>() == group) 
 				continue;
 			if (hit.transform.CompareTag("Window"))
 				continue;
