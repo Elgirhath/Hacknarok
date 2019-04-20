@@ -33,6 +33,10 @@ public class Receptionist : MonoBehaviour, Interactable
             {
                 blockTalk = true;
             }
+            else
+            {
+                interactedPlayer = interactingPlayer;
+            }
             playerPosition = interactingPlayer.GetComponent<RectTransform>();
             initialPosition = playerPosition.position;
             if(!talkInProgress)
@@ -83,6 +87,7 @@ public class Receptionist : MonoBehaviour, Interactable
                 progressIndicator.SetActive(false);
                 indicatorBar.fillAmount = 1;
                 talkInProgress = false;
+                switchCollidersState(true);
             }
         }
     }
@@ -96,19 +101,23 @@ public class Receptionist : MonoBehaviour, Interactable
         startTime = Time.time;
         progressIndicator.SetActive(true);
         talkInProgress = true;
-        foreach (Collider2D col in colliders)
-        {
-            col.enabled = false;
-        }
+        switchCollidersState(false);
         yield return new WaitForSeconds(timeToSucceed);
         progressIndicator.SetActive(false);
-        foreach (Collider2D col in colliders)
-        {
-            col.enabled = true;
-        }        
+        switchCollidersState(true);
         if (isGuard)
         {
             spriteRenderer.flipX = false;
         }
+        talkInProgress = false;
+        indicatorBar.fillAmount = 1;
+    }
+
+    private void switchCollidersState(bool state)
+    {
+        foreach (Collider2D col in colliders)
+        {
+            col.enabled = state;
+        }    
     }
 }
