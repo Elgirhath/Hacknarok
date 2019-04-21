@@ -20,7 +20,7 @@ public class GuardVisionEnd : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         GameObject gObject = other.gameObject;
-        if (gObject.CompareTag("Player"))
+        if (gObject.CompareTag("Player1") || gObject.CompareTag("Player2"))
         {
                 gameManager.EndGame(true);
         }

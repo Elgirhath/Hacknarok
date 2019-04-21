@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class DoctorVision : MonoBehaviour {
@@ -13,7 +14,9 @@ public class DoctorVision : MonoBehaviour {
     private GameObject[] players;
 
     private void Start() {
-        players = GameObject.FindGameObjectsWithTag("Player");
+		GameObject[] tmp_1 = GameObject.FindGameObjectsWithTag("Player1"); 
+		GameObject[] tmp_2 = GameObject.FindGameObjectsWithTag("Player2");
+        players = tmp_1.Concat(tmp_2).ToArray();
         gameManager = GameManager.instance;
     }
 
@@ -30,10 +33,14 @@ public class DoctorVision : MonoBehaviour {
             Vector2 direction = (player.transform.position - transform.position).normalized;
             RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, dist);
             Debug.DrawRay(transform.position, direction * dist, Color.red);
-            if (!hit || hit.collider.CompareTag("Player")) {
+            if (!hit)
+                continue;
+            if (hit.collider.CompareTag("Player1") || hit.collider.CompareTag("Player2")) {
                 float angle = Vector2.Angle(direction, viewDirection);
                 if (angle < visionAngle)
+                {
                     gameManager.EndGame(true);
+                }
             }
         }
     }

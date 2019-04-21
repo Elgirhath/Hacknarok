@@ -57,7 +57,9 @@ public class InteractController : MonoBehaviour {
 				continue;
 			if (hit.transform.CompareTag("Window"))
 				continue;
-			if (hit.transform.CompareTag("Player"))
+			if (hit.transform.CompareTag("Player1"))
+				continue;
+			if (hit.transform.CompareTag("Player2"))
 				continue;
 			return false;
 		}
