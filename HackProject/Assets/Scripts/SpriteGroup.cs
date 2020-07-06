@@ -17,7 +17,7 @@ public class SpriteGroup : MonoBehaviour {
     public void Apply() {
         var sprites = GetComponentsInChildren<SpriteRenderer>();
 
-        foreach (var sprite in sprites.Skip(1)) {
+        foreach (var sprite in sprites) {
             Undo.RegisterCompleteObjectUndo(sprite, "Apply sorting order");
             sprite.sortingLayerName = sortingLayerName;
             sprite.sortingOrder = sortingOrder;
@@ -28,6 +28,10 @@ public class SpriteGroup : MonoBehaviour {
 
     public void Update()
     {
-        if (dynamic) Apply();
+        if (!dynamic) return;
+
+        sortingOrder = SpriteSortingOrderProvider.GetSortingOrder(gameObject);
+        GetComponent<SpriteRenderer>().sortingOrder = sortingOrder;
+        Apply();
     }
 }

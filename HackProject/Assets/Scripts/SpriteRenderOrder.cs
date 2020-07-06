@@ -19,7 +19,7 @@ public class SpriteRenderOrder : MonoBehaviour {
 			bool isInLayer = sprite.sortingLayerName == layerName;
 			if (isInLayer) {
 				Undo.RegisterCompleteObjectUndo(sprite.transform, "SortByY");
-                sprite.sortingOrder = SpriteSortingOrderProvider.GetSortingOrder(sprite);
+                sprite.sortingOrder = SpriteSortingOrderProvider.GetSortingOrder(sprite.gameObject);
 			}
 		}
 		
