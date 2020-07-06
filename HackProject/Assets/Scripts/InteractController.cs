@@ -91,7 +91,11 @@ public class InteractController : MonoBehaviour {
 	}
 	
 	public void Select() {
-		Vector3 tooltipPosition = interactable.position + tooltipRelativePosition;
+        Vector3 tooltipPosition = interactable.position + tooltipRelativePosition;
+        if (interactable.GetComponentInParent<PlayerController>() != null)
+        {
+            tooltipPosition += Vector3.up * 2f;
+        }
 		Vector3 screenPos = Camera.main.WorldToScreenPoint(tooltipPosition);
 		Transform ui = GameObject.FindGameObjectWithTag("UI").transform;
 		tooltip = Instantiate(tooltipPrefab, screenPos, Quaternion.identity, ui);
