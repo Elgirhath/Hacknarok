@@ -19,6 +19,10 @@ public class Docs : MonoBehaviour, Interactable
     private GameObject progressIndicator;
     private float startTime;
     
+    private GameObject feedbackContainer;
+    public GameObject feedbackTextPrefab;
+    private GameObject feedbackText;
+    
     public float timeToSucceed;
     public void Interact(InteractController controller) {
         Task task = taskManager.TaskExists(GameManager.TaskType.DOCUMENTS);
@@ -34,15 +38,21 @@ public class Docs : MonoBehaviour, Interactable
         {
             if (done)
             {
-                Debug.Log("Dude, are you high?! You have already done that task!");
+                feedbackText = Instantiate(feedbackTextPrefab, feedbackContainer.transform);
+                feedbackText.GetComponent<Text>().text = "Dude, are you high?! You have already done that task!";
+                Destroy(feedbackText, 5.0f);
             }
-            Debug.Log("Not now man! Now is not the time for that!");
+            feedbackText = Instantiate(feedbackTextPrefab, feedbackContainer.transform);
+            feedbackText.GetComponent<Text>().text = "Not now man! Now is not the time for that!";
+            Destroy(feedbackText, 5.0f);
         }
     }
 
     private void Succeed(Task task)
     {
-        Debug.Log("Nice!");
+        feedbackText = Instantiate(feedbackTextPrefab, feedbackContainer.transform);
+        feedbackText.GetComponent<Text>().text = "Nice!";
+        Destroy(feedbackText, 5.0f);
         task.Accomplish();
         done = true;
     }
@@ -60,6 +70,8 @@ public class Docs : MonoBehaviour, Interactable
         indicatorBar = progressIndicator.GetComponent<Image>();
         indicatorBar.fillAmount = 1;
         progressIndicator.SetActive(false);
+
+        feedbackContainer = GameObject.FindGameObjectWithTag("Feedback");
     }
 
     void Update()

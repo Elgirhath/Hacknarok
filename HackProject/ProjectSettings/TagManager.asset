@@ -10,6 +10,7 @@ TagManager:
   - Inventory
   - Player1
   - Player2
+  - Feedback
   layers:
   - Default
   - TransparentFX

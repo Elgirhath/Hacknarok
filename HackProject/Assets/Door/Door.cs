@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Door : MonoBehaviour, Interactable {
     private Transform player;
@@ -9,6 +10,9 @@ public class Door : MonoBehaviour, Interactable {
     public bool isLocked;
     public float minCloseDist;
     public Item key;
+    private GameObject feedbackContainer;
+    public GameObject feedbackTextPrefab;
+    private GameObject feedbackText;
 
     private bool _isClosed = true;
     private bool isClosed {
@@ -29,7 +33,9 @@ public class Door : MonoBehaviour, Interactable {
             if (isLocked) {
                 Inventory inventory = player.GetComponent<Inventory>();
                 if (!inventory.Contains(key)) {
-                    Debug.Log("No key");
+                    feedbackText = Instantiate(feedbackTextPrefab, feedbackContainer.transform);
+                    feedbackText.GetComponent<Text>().text = "You need a key to open that door!";
+                    Destroy(feedbackText, 5.0f);
                     return;
                 }
                 
@@ -47,5 +53,10 @@ public class Door : MonoBehaviour, Interactable {
                 isClosed = true;
             }
         }
+    }
+
+    void Start()
+    {
+        feedbackContainer = GameObject.FindGameObjectWithTag("Feedback");
     }
 }

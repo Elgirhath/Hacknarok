@@ -22,6 +22,10 @@ public class Receptionist : MonoBehaviour, Interactable
     private float startTime;
     private List<Collider2D> colliders = new List<Collider2D>();
     private SpriteRenderer spriteRenderer;
+
+    private GameObject feedbackContainer;
+    public GameObject feedbackTextPrefab;
+    private GameObject feedbackText;
     
     public float timeToSucceed;
     public void Interact(InteractController controller)
@@ -45,7 +49,9 @@ public class Receptionist : MonoBehaviour, Interactable
         
         else
         {
-            Debug.Log("No, man! No! She already knows you!");
+            feedbackText = Instantiate(feedbackTextPrefab, feedbackContainer.transform);
+            feedbackText.GetComponent<Text>().text = "No, man! No! She already knows you!";
+            Destroy(feedbackText, 5.0f);
         }
     }
     
@@ -72,6 +78,8 @@ public class Receptionist : MonoBehaviour, Interactable
 
         isGuard = name != "Receptionist";
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        feedbackContainer = GameObject.FindGameObjectWithTag("Feedback");
     }
 
     void Update()
