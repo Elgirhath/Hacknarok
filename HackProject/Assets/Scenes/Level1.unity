@@ -31321,11 +31321,6 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 2400
       objectReference: {fileID: 0}
-    - target: {fileID: 748108200334559339, guid: ca58626c12e11eb4eb128cfa9f7e7ff0,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 748108200334559343, guid: ca58626c12e11eb4eb128cfa9f7e7ff0,
         type: 3}
       propertyPath: xInput
@@ -31360,16 +31355,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.089
-      objectReference: {fileID: 0}
-    - target: {fileID: 748108200334559336, guid: ca58626c12e11eb4eb128cfa9f7e7ff0,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.32
-      objectReference: {fileID: 0}
-    - target: {fileID: 748108200334559336, guid: ca58626c12e11eb4eb128cfa9f7e7ff0,
-        type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 748108200334559333, guid: ca58626c12e11eb4eb128cfa9f7e7ff0,
         type: 3}
@@ -77075,7 +77060,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 678
+  m_SortingOrder: 567
   m_Sprite: {fileID: 21300000, guid: 42b19d06dd5196245bc7f571ff822309, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -77114,7 +77099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sortingLayerName: Default
-  sortingOrder: 1219
+  sortingOrder: 567
   dynamic: 1
 --- !u!1 &1382100959
 GameObject:
@@ -91687,6 +91672,7 @@ GameObject:
   - component: {fileID: 1658528715}
   - component: {fileID: 1658528714}
   - component: {fileID: 1658528713}
+  - component: {fileID: 1658528716}
   m_Layer: 0
   m_Name: Guard
   m_TagString: Interactable
@@ -91747,7 +91733,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 555
+  m_SortingOrder: 753
   m_Sprite: {fileID: 21300000, guid: b7894268e64d9a14294be92eee809c17, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -91776,6 +91762,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1658528716
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658528712}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.0062874407, y: -0.15299477}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.19, y: 0.34}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.12712544, y: 0.07592693}
+  m_EdgeRadius: 0
 --- !u!4 &1659659670 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3789805498865164260, guid: 3f19a5fee0b7d454885edd5124bc1bc9,

@@ -30,6 +30,11 @@ public class SpriteGroup : MonoBehaviour {
     {
         if (!dynamic) return;
 
+        Recalculate();
+    }
+
+    private void Recalculate()
+    {
         sortingOrder = SpriteSortingOrderProvider.GetSortingOrder(gameObject);
         GetComponent<SpriteRenderer>().sortingOrder = sortingOrder;
         Apply();

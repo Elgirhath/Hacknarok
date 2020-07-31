@@ -45,9 +45,4 @@ public class PlayerController : MonoBehaviour
         yPos = Mathf.Clamp(yPos, cam.transform.position.y - vertExtent, cam.transform.position.y + vertExtent);
         rb.MovePosition(new Vector2(xPos, yPos));
     }
-    
-    void LateUpdate()
-    {
-        GetComponent<SpriteRenderer>().sortingOrder = -(int)(transform.position.y * 100);
-    }
 }
