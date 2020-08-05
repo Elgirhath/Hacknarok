@@ -32,6 +32,8 @@ You will not be able to complete your mission on your own. The guards are very c
 
 Time is running out and you still have a lot to do. Distribute your tasks wisely and cooperate to make the most of your time.
 
+[![VaxMen](https://img.youtube.com/vi/YwRNew8yLXA/0.jpg)](https://www.youtube.com/watch?v=YwRNew8yLXA "VaxMen")
+
 ## What next?
 
 VaxMen has a great potential for an awesome family game, with idea of expanding the game with dozens of new levels, different activities, different type of security measures, bigger and more complex maps, more cooperative actions.
