@@ -32,7 +32,7 @@ You will not be able to complete your mission on your own. The guards are very c
 
 Time is running out and you still have a lot to do. Distribute your tasks wisely and cooperate to make the most of your time.
 
-![Gameplay showcase](youtube_preview.png)
+[![Gameplay showcase](youtube_preview.png)](https://www.youtube.com/watch?v=YwRNew8yLXA)
 
 ## What next?
 
